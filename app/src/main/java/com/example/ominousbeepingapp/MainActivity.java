@@ -10,17 +10,19 @@ import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
+
     ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.beep);
+        mp.setLooping(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imageView = findViewById(R.id.imageview);
         Glide.with(this).load(R.drawable.sonar).into(imageView);
-        final MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.beep);
-        mp.setLooping(true);
         mp.start();
     }
+
 }
 // -
 //Music distributed by -https://www.youtube.com/channel/UCX1r...
